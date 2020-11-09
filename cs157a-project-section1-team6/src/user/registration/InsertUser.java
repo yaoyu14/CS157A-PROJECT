@@ -10,24 +10,23 @@ import registration.model.User;
 public class InsertUser {
 
     public int registerUser(User user) throws ClassNotFoundException {
-        String INSERT_USERS_SQL = "INSERT INTO user" +
-            "  (first_name, last_name, username, password) VALUES " +
-            " (?, ?, ?, ?);";
+        String INSERT_USERS_SQL = "INSERT INTO Users" +
+            "  (username, password, address) VALUES " +
+            " (?, ?, ?);";
 
         int result = 0;
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         try (Connection connection = DriverManager
-            .getConnection("jdbc:mysql://localhost:3306/cs157a?serverTimezone=UTC&useSSL=YES", "root", "1017081623");
+            .getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=UTC&useSSL=YES", "root", "1017081623");
         		//useSSL=TRUE?
             // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
             //preparedStatement.setInt(1, 1);
-            preparedStatement.setString(1, user.getFirstName());
-            preparedStatement.setString(2, user.getLastName());
-            preparedStatement.setString(3, user.getUsername());
-            preparedStatement.setString(4, user.getPassword());
+            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setNString(3, user.getAddress());
 
             System.out.println(preparedStatement);
             // Step 3: Execute the query or update query

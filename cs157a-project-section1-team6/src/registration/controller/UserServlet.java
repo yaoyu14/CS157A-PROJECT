@@ -35,16 +35,14 @@ public class UserServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String address = request.getParameter("address");
 
 		User user = new User();
-		user.setFirstName(firstName);
-		user.setLastName(lastName);
 		user.setUsername(username);
 		user.setPassword(password);
+		user.setAddress(address);
 
 		
 		try {
