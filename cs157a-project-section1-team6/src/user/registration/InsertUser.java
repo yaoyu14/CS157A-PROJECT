@@ -21,7 +21,7 @@ public class InsertUser {
         try (Connection connection = DriverManager
             .getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=UTC&useSSL=YES", "root", "1017081623");
         		//useSSL=TRUE?
-            // Step 2:Create a statement using connection object
+            // Step 2:Create a statement using connection object.
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
             //preparedStatement.setInt(1, 1);
             preparedStatement.setString(1, user.getUsername());
