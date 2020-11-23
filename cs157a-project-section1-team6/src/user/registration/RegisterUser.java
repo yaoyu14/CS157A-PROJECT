@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import registration.model.User;
+import registration.model.RegistrationModel;
 
-public class InsertUser {
+public class RegisterUser {
 
-    public int registerUser(User user) throws ClassNotFoundException {
+    public int registerUser(RegistrationModel user) throws ClassNotFoundException {
         String INSERT_USERS_SQL = "INSERT INTO Users" +
             "  (username, password, address) VALUES " +
             " (?, ?, ?);";

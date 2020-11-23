@@ -1,6 +1,6 @@
 package registration.model;
 
-public class User {
+public class RegistrationModel {
 
 	private String username;
 	private String password;

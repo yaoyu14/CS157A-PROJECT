@@ -8,18 +8,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import registration.model.User;
-import user.registration.InsertUser;
+import registration.model.RegistrationModel;
+import user.registration.RegisterUser;
 
 
 @WebServlet("/register")
-public class UserServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
-	private InsertUser insertUser = new InsertUser();
+	private RegisterUser insertUser = new RegisterUser();
 
-    public UserServlet() {
+    public RegisterServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,7 +38,7 @@ public class UserServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String address = request.getParameter("address");
 
-		User user = new User();
+		RegistrationModel user = new RegistrationModel();
 		user.setUsername(username);
 		user.setPassword(password);
 		user.setAddress(address);
