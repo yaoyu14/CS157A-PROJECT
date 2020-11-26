@@ -27,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/userRegister.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("userRegister.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -51,7 +51,7 @@ public class RegisterServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/signUpSuccess.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("signUpSuccess.jsp");
 		dispatcher.forward(request, response);
 	}
 
