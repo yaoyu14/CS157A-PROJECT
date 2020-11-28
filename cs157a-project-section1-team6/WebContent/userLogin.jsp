@@ -19,10 +19,15 @@
      <td>Password</td>
      <td><input type="password" name="password" /></td>
     </tr>
-
    </table>
    <input type="submit" value="Submit" />
-  </form>
- </div>
+   <div> 
+   <span style="color: red">${errorMessage}</span>
+</div>
+</form>
+
+	<p><a href="userRegister.jsp">CLick Here to Sign Up</a></p>
+
+	</div>
 </body>
 </html>

@@ -2,7 +2,7 @@ package login.controller;
 
 import java.io.IOException;
 
-
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,13 +34,10 @@ public class LoginServlet extends HttpServlet {
 
         try {
             if (loginUser.validate(LoginModel)) {
-                //HttpSession session = request.getSession();
-                // session.setAttribute("username",username);
-                response.sendRedirect("signUpSuccess.jsp");
+                request.getRequestDispatcher("signUpSuccess.jsp").forward(request, response);
             } else {
-                HttpSession session = request.getSession();
-                //session.setAttribute("user", username);
-                response.sendRedirect("login.jsp");
+            	request.setAttribute("errorMessage", "Invalid Username or Password.");
+                request.getRequestDispatcher("userLogin.jsp").forward(request, response);
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

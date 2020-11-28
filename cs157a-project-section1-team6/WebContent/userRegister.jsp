@@ -26,6 +26,8 @@
    </table>
    <input type="submit" value="Submit" />
   </form>
+  	<p><a href="userLogin.jsp">CLick Here to Login</a></p>
+  
  </div>
 </body>
 </html>
