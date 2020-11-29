@@ -1,6 +1,6 @@
-<%@ page  import="java.sql.*"  language="java" contentType="text/html; charset=UTF-8"
+<%@ page import="java.sql.*" language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="user.login.*"%>
+
     
 <!DOCTYPE html>
 <html>
@@ -10,13 +10,7 @@
 </head>
 <body>
 
-<h1>Welcome to Cocktails Shop!</h1>
-
-<%!
-public void printt(){
-	System.out.println("TESTING");
-}
-%>
+<h1>User successfully buying!</h1>
 
 
 <%
@@ -34,19 +28,20 @@ public void printt(){
 
 		//out.println("Initial entries in table \"hw1\": <br/>");
 		Statement stmt = con.createStatement();
+		
 		ResultSet rs = stmt.executeQuery("SELECT * FROM cocktails_deliveries.cocktails");
-		while (rs.next()) {
+		/*while (rs.next()) {
 			String name = rs.getString(2);
 			//out.println("<html> <input type=\"submit\" name=\"button1\" value=\"=add\" /> </html>");
-			out.println(rs.getString(1) + " " + rs.getString(2) + " $" + rs.getString(4) + "<br/><br/>" );
-		}
+			out.println(rs.getString(2) + " $" + rs.getString(3) + "<br/><br/>" );
+		}*/
 		
-	/*	rs = stmt.executeQuery("SELECT * FROM cocktails_deliveries.seller");
+	   rs = stmt.executeQuery("SELECT * FROM cocktails_deliveries.seller");
 		while (rs.next()) {
 			String name = rs.getString(2);
 			//out.println("<html> <input type=\"submit\" name=\"button1\" value=\"=add\" /> </html>");
 			out.println(rs.getString(2) + "<br/><br/>" );
-		}*/
+		}
 		
 		rs.close();
 		stmt.close();
@@ -55,19 +50,6 @@ public void printt(){
 		out.println("SQLException caught: " + e.getMessage());
 	}
 	%>
-<form action="${pageContext.request.contextPath}/addedcocktails" method="post">
-<label for="fname">Pick a Cocktail:</label>
-
-<!--<input type="text" id="fname" name="cocktailName">-->
-<input type="text"  name="cocktailName">
-<input type="text"  name="numberofCocktails">
-<input type="submit" value="add" />
-</form>
-
-<form action="${pageContext.request.contextPath}/buy" method="post">
-<input type="submit" value="Buy" />
-</form>
-
-
+	
 </body>
 </html>

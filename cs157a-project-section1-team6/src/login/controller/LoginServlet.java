@@ -33,14 +33,16 @@ public class LoginServlet extends HttpServlet {
         LoginModel.setPassword(password);
 
         try {
-            if (loginUser.validate(LoginModel)) {
+            if (loginUser.validate(LoginModel) == 1) {
                 //HttpSession session = request.getSession();
                 // session.setAttribute("username",username);
                 response.sendRedirect("signUpSuccess.jsp");
-            } else {
+            }else if(loginUser.validate(LoginModel) == 2) {
+            	response.sendRedirect("adminPage.jsp");
+            }else {
                 HttpSession session = request.getSession();
                 //session.setAttribute("user", username);
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("userLogin.jsp");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
