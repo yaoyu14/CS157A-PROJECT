@@ -34,14 +34,11 @@ public class LoginServlet extends HttpServlet {
 
         try {
             if (loginUser.validate(LoginModel) == 1) {
-                //HttpSession session = request.getSession();
-                // session.setAttribute("username",username);
                 response.sendRedirect("signUpSuccess.jsp");
             }else if(loginUser.validate(LoginModel) == 2) {
             	response.sendRedirect("list");
             }else {
                 HttpSession session = request.getSession();
-                //session.setAttribute("user", username);
                 response.sendRedirect("userLogin.jsp");
             }
         } catch (ClassNotFoundException e) {
