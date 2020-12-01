@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<a href="logout.jsp">Logout</a>
 <h1>Welcome to Cocktails Shop!</h1>
 
 <%!
@@ -20,16 +20,16 @@ public void printt(){
 
 
 <%
-	String db = "cs157a";
+	String db = "Cocktails_Deliveries";
 	String user;
 	user = "root";
-	String password = "rootAc045065";
+	String password = "1017081623";
 
 	try {
 
 		java.sql.Connection con;
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cocktails_deliveries?serverTimezone=EST5EDT", user, password);
+		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", user, password);
 		out.println(db + " database successfully opened.<br/><br/>");
 
 		//out.println("Initial entries in table \"hw1\": <br/>");
@@ -63,6 +63,7 @@ public void printt(){
 <input type="text"  name="numberofCocktails">
 <input type="submit" value="add" />
 </form>
+
 
 <form action="${pageContext.request.contextPath}/buy" method="post">
 <input type="submit" value="Buy" />

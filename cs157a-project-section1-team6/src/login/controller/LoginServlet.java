@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
                 // session.setAttribute("username",username);
                 response.sendRedirect("signUpSuccess.jsp");
             }else if(loginUser.validate(LoginModel) == 2) {
-            	response.sendRedirect("adminPage.jsp");
+            	response.sendRedirect("list");
             }else {
                 HttpSession session = request.getSession();
                 //session.setAttribute("user", username);

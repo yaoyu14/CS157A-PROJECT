@@ -8,7 +8,7 @@
 </head>
 <body>
  <div align="center">
-  <h1>Sign up</h1>
+  <h1>Sign Up</h1>
   <form action="<%= request.getContextPath() %>/register" method="post">
    <table style="with: 80%">
     <tr>
