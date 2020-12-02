@@ -36,7 +36,7 @@ public class AdminServlet extends HttpServlet {
         try {
             switch (action) {
                 case "/new":
-                    showNewPage(request, response);
+                    showAddCocktailPage(request, response);
                     break;
                 case "/insert":
                     insertCocktail(request, response);
@@ -45,7 +45,7 @@ public class AdminServlet extends HttpServlet {
                     deleteCocktail(request, response);
                     break;
                 case "/edit":
-                    showEditPage(request, response);
+                    showEditCocktailPage(request, response);
                     break;
                 case "/update":
                     updateCocktail(request, response);
@@ -67,13 +67,13 @@ public class AdminServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    private void showNewPage(HttpServletRequest request, HttpServletResponse response)
+    private void showAddCocktailPage(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("addCocktails.jsp");
         dispatcher.forward(request, response);
     }
 
-    private void showEditPage(HttpServletRequest request, HttpServletResponse response)
+    private void showEditCocktailPage(HttpServletRequest request, HttpServletResponse response)
     throws SQLException, ServletException, IOException {
         int cocktail_id = Integer.parseInt(request.getParameter("cocktail_id"));
         AdminModel existingCocktail = AdminFunction.selectCocktail(cocktail_id);
