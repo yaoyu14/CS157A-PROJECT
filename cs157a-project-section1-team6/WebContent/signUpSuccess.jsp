@@ -10,7 +10,11 @@
 </head>
 <body>
 <a href="logout.jsp">Logout</a>
+<a href="profile.jsp">Profile</a>
 <h1>Welcome to Cocktails Shop!</h1>
+<div>
+   <span style="color: red">${username}</span>
+</div>
 
 <%!
 public void printt(){
@@ -62,6 +66,7 @@ public void printt(){
 		out.println("SQLException caught: " + e.getMessage());
 	}
 %>
+
 <form action="${pageContext.request.contextPath}/addedcocktails" method="post">
 <label for="fname">Pick a Cocktail:</label>
 

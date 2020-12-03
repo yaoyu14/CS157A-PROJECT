@@ -27,6 +27,7 @@ public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+    	
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -45,8 +46,8 @@ public class LoginServlet extends HttpServlet {
             }else if(loginUser.validate(LoginModel) == 2) {
             	response.sendRedirect("list");
             }else {
-                HttpSession session = request.getSession();
-                response.sendRedirect("userLogin.jsp");
+            	request.setAttribute("errorMessage", "Invalid Username or Password.");                
+                request.getRequestDispatcher("userLogin.jsp").forward(request, response);
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
