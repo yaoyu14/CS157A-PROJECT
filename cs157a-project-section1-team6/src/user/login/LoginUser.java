@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 import login.model.LoginModel;
 
 public class LoginUser {
@@ -17,7 +18,7 @@ public class LoginUser {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-        	.getConnection("jdbc:mysql://localhost:3306/cocktails_deliveries?serverTimezone=EST5EDT", "root", "1017081623");
+        	.getConnection("jdbc:mysql://localhost:3306/cocktails_deliveries?serverTimezone=EST5EDT", "root", "rootAc045065");
 
             // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection
@@ -42,11 +43,11 @@ public class LoginUser {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-        	.getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "1017081623");
+        	.getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "rootAc045065");
 
             // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection
-            .prepareStatement("select * from Users where username = ? and password = ? ")) {
+            .prepareStatement("SELECT * FROM Users WHERE username = ? AND password = ? ")) {
             preparedStatement.setString(1, LoginUser.getUsername());
             preparedStatement.setString(2, LoginUser.getPassword());
 

@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import homePage.controller.Buy;
+import homePage.controller.UserNameVal;
 import login.model.LoginModel;
 import user.login.LoginUser;
 
@@ -34,7 +36,12 @@ public class LoginServlet extends HttpServlet {
 
         try {
             if (loginUser.validate(LoginModel) == 1) {
+            	//UserNameVal user = new UserNameVal();
+            	UserNameVal.userName =   " \""+ LoginModel.getUsername() + "\" "  ;
+//            	Buy b = new Buy();
+//            	b.setUser(user);
                 response.sendRedirect("signUpSuccess.jsp");
+                
             }else if(loginUser.validate(LoginModel) == 2) {
             	response.sendRedirect("list");
             }else {
