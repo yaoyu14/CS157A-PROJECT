@@ -2,7 +2,7 @@ package login.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,6 +25,7 @@ public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+    	
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -33,10 +34,15 @@ public class LoginServlet extends HttpServlet {
         LoginModel.setPassword(password);
 
         try {
-            if (loginUser.validate(LoginModel)) {
-                request.getRequestDispatcher("signUpSuccess.jsp").forward(request, response);
-            } else {
-            	request.setAttribute("errorMessage", "Invalid Username or Password.");
+            if (loginUser.validate(LoginModel) == 1) {
+
+            	request.setAttribute("username", username);
+            	request.getRequestDispatcher("signUpSuccess.jsp").forward(request, response);
+                //response.sendRedirect("signUpSuccess.jsp");
+            }else if(loginUser.validate(LoginModel) == 2) {
+            	response.sendRedirect("list");
+            }else {
+            	request.setAttribute("errorMessage", "Invalid Username or Password.");                
                 request.getRequestDispatcher("userLogin.jsp").forward(request, response);
             }
         } catch (ClassNotFoundException e) {

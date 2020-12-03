@@ -9,14 +9,40 @@ import java.sql.SQLException;
 import login.model.LoginModel;
 
 public class LoginUser {
-
-    public boolean validate(LoginModel LoginUser) throws ClassNotFoundException {
+	
+	//todo another method this methond will return boolean
+    public boolean validateAdmin(LoginModel LoginUser) throws ClassNotFoundException {
         boolean status = false;
 
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-        	.getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=UTC&useSSL=YES", "root", "1017081623");
+        	.getConnection("jdbc:mysql://localhost:3306/cocktails_deliveries?serverTimezone=EST5EDT", "root", "1017081623");
+
+            // Step 2:Create a statement using connection object
+            PreparedStatement preparedStatement = connection
+            .prepareStatement("SELECT * FROM users WHERE username = ? and user_id in (SELECT user_id FROM admin WHERE admin_id = 1);")) {
+            preparedStatement.setString(1, LoginUser.getUsername());
+            //preparedStatement.setString(2, LoginUser.getPassword());
+
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            status = rs.next();
+
+        } catch (SQLException e) {
+            // process sql exception
+            printSQLException(e);
+        }
+        return status;
+    }
+
+    public int validate(LoginModel LoginUser) throws ClassNotFoundException {
+        int status = -1;
+
+        Class.forName("com.mysql.jdbc.Driver");
+
+        try (Connection connection = DriverManager
+        	.getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "1017081623");
 
             // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection
@@ -26,7 +52,14 @@ public class LoginUser {
 
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
-            status = rs.next();
+            if(rs.next()) {
+            	
+            	if(validateAdmin(LoginUser)) {
+            	status = 2;
+            	}else {
+            		status = 1;
+            	}
+            }
 
         } catch (SQLException e) {
             // process sql exception
