@@ -2,7 +2,7 @@ package homePage.controller;
 
 public class MyValues {
 
-	private int containsId = 56;
+	private int containsId = 73;
 	//private int quantity = 2;
 
 	
