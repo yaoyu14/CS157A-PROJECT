@@ -27,7 +27,7 @@ public class AdminFunction {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cocktails_deliveries?serverTimezone=EST5EDT", "root", "1017081623");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cocktails_deliveries?serverTimezone=EST5EDT", "root", "rootAc045065");
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
