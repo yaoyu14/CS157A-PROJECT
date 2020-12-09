@@ -1,37 +1,5 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
- pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
- <div align="center">
-  <h1>Sign Up</h1>
-  <form action="<%= request.getContextPath() %>/register" method="post">
-   <table style="with: 80%">
-    <tr>
-     <td>Username</td>
-     <td><input type="text" name="username" /></td>
-    </tr>
-    <tr>
-     <td>Password</td>
-     <td><input type="password" name="password" /></td>
-    </tr>
-    <tr>
-     <td>Address</td>
-     <td><input type="text" name="address" /></td>
-    </tr>
-   </table>
-   <input type="submit" value="Submit" />
-  </form>
-  	<p><a href="userLogin.jsp">Click Here to Login</a></p>
-  
- </div>
-</body>
-</html> --%>
 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     
@@ -44,7 +12,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 </head>
-<body>
+<body style="background:#F0B27A no-repeat;"> 
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
@@ -54,7 +22,7 @@
   				</div>
 				<div class="d-flex justify-content-center form_container">
 					<form action="<%= request.getContextPath() %>/register" method="post">
-						<div class="input-group mb-3">
+						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
@@ -66,7 +34,7 @@
 							</div>
 							<input type="password" name="password" class="form-control input_pass" value="" placeholder="password">
 						</div>
-						<div class="input-group mb-1">
+						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-map-marker"></i></span>
 							</div>

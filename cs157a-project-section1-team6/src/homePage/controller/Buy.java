@@ -20,35 +20,35 @@ import login.model.LoginModel;
 
 @WebServlet("/buy")
 public class Buy extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	
-	
-	public int containsId = 27;
-	MyValues myNewVal;
-	UserNameVal user = null;
-	
-	public void setUser(UserNameVal user) {
-		this.user = user;
-	}
-	
+private static final long serialVersionUID = 1L;
+
+
+public int containsId = 27;
+MyValues myNewVal;
+UserNameVal user = null;
+
+public void setUser(UserNameVal user) {
+this.user = user;
+}
+
 
     public Buy() {
         super();
         // TODO Auto-generated constructor stub
     }
-    
+   
     public MyValues getContainsId() {
-		return myNewVal;
-	}
-	public void setContainsId(MyValues myNewVal) {
-		this.myNewVal = myNewVal;
-	}
-    
+return myNewVal;
+}
+public void setContainsId(MyValues myNewVal) {
+this.myNewVal = myNewVal;
+}
+   
     //test
-    
+   
     public int Buying(int myContainsId) throws ClassNotFoundException {
-        System.out.println("This is the userNAme: "+ UserNameVal.userName  );
-        String SQL_STATMENT = "INSERT INTO orders" +
+        System.out.println("This is the userNAme: "+ UserNameVal.userName);
+        String SQL_STATMENT = "INSERT INTO Orders" +
                 "  (order_id, created_date, price) " +
   " SELECT (?), Now(), "+
   " (SELECT SUM(price) * quantity FROM cocktails x JOIN contains y USING(cocktail_id) WHERE y.order_id = ?);";
@@ -58,22 +58,22 @@ public class Buy extends HttpServlet {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         try (Connection connection = DriverManager
-            .getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "rootAc045065");
-        		//useSSL=TRUE?
+            .getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "1017081623");
+        //useSSL=TRUE?
             // Step 2:Create a statement using connection object.
             PreparedStatement preparedStatement = connection.prepareStatement(SQL_STATMENT)) {
-        		
-        	MyValues myVal = new MyValues();
-        	System.out.println("MY VAL"+ myVal);
+       
+        MyValues myVal = new MyValues();
+        System.out.println("MY VAL"+ myVal);
             preparedStatement.setInt(1, myVal.getContainsId());    
             preparedStatement.setInt(2, myVal.getContainsId());
             //AddedCocktails myCount = new AddedCocktails();
             //preparedStatement.setInt(3, myVal.getContainsId());
-            
+           
             //MyValues myVal = new MyValues();
-        	//myVal.setContainsId(36);
+        //myVal.setContainsId(36);
             myVal.setContainsId(myVal.getContainsId() + 1);
-            
+           
             System.out.println("KKKKKKKKKKKKKKKKK" + myVal.getContainsId());
 
 
@@ -88,23 +88,23 @@ public class Buy extends HttpServlet {
         }
         return result;
     }
-    
+   
     public int userID(int myContainsId) throws ClassNotFoundException {
         int status = -1;
 
         String SQL_STATMENT= "INSERT INTO Buys" +
                 "  (user_id, order_id) SELECT ( (SELECT user_id FROM users WHERE username = " + UserNameVal.userName +" )  ), (?) ";
-        
+       
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("This is the userNAme: "+ UserNameVal.userName  );
         try (Connection connection = DriverManager
-        	.getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "rootAc045065");
+        .getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "1017081623");
 
             // Step 2:Create a statement using connection object
-        
+       
             PreparedStatement preparedStatement = connection
             .prepareStatement(SQL_STATMENT)) {
-    	 	MyValues myVal2 = new MyValues();
+    MyValues myVal2 = new MyValues();
           //  preparedStatement.setInt(1, UserNameVal.userName);
             preparedStatement.setInt(1, myVal2.getContainsId());
             //preparedStatement.setString(2, LoginUser.getPassword());
@@ -114,16 +114,16 @@ public class Buy extends HttpServlet {
             //ResultSet rs = preparedStatement.executeQuery();
             preparedStatement.executeUpdate();
             //System.out.println(rs);
-            
-            
-            
+           
+           
+           
 //            if(rs.next()) {
-//            	
-//            	if(validateAdmin(LoginUser)) {
-//            	status = 2;
-//            	}else {
-//            		status = 1;
-//            	}
+//            
+//             if(validateAdmin(LoginUser)) {
+//             status = 2;
+//             }else {
+//             status = 1;
+//             }
 //            }
 
         } catch (SQLException e) {
@@ -148,31 +148,31 @@ public class Buy extends HttpServlet {
             }
         }
     }
-    
+   
     //test
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("signUpSuccess.jsp");
-		dispatcher.forward(request, response);
-	}
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+// TODO Auto-generated method stub
+response.getWriter().append("Served at: ").append(request.getContextPath());
+
+RequestDispatcher dispatcher = request.getRequestDispatcher("signUpSuccess.jsp");
+dispatcher.forward(request, response);
+}
 
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 //TODO
-		try {
-			Buying(containsId);
-			userID(containsId);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			System.out.println("HELLOOO TEST");
-			e.printStackTrace();
-		}
-		RequestDispatcher dispatcher = request.getRequestDispatcher("buying.jsp");
-		dispatcher.forward(request, response);
-	}
+try {
+Buying(containsId);
+userID(containsId);
+} catch (ClassNotFoundException e) {
+// TODO Auto-generated catch block
+System.out.println("HELLOOO TEST");
+e.printStackTrace();
+}
+RequestDispatcher dispatcher = request.getRequestDispatcher("buying.jsp");
+dispatcher.forward(request, response);
+}
 
 }

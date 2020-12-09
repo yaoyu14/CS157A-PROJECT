@@ -8,9 +8,12 @@ table, th, td {
 }
 </style>
 	<head>
-		<title>Search cocktail</title>		
+		<title>Search cocktail</title>	
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css"> 		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> 		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>	
 	</head>
 	<body>
+	<a href="signUpSuccess.jsp">Home</a>
+        <body style="background:#F0B27A no-repeat;"> 
 		<br>
 		<form action="" mothod="POST">
 		<div class="container">

@@ -7,10 +7,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css"> 		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> 		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
 <a href="logout.jsp">Logout</a>
 <a href="profile.jsp">Profile</a>
+<a href="search.jsp">Search</a>
+
 <h1>Welcome to Cocktails Shop!</h1>
 
 <%!
@@ -24,7 +27,7 @@ public void printt(){
 	String db = "Cocktails_Deliveries";
 	String user;
 	user = "root";
-	String password = "rootAc045065";
+	String password = "1017081623";
 
 	try {
 
@@ -68,8 +71,8 @@ public void printt(){
 <label for="fname">Pick a Cocktail:</label>
 
 <!--<input type="text" id="fname" name="cocktailName">-->
-<input type="text"  name="cocktailName">
-<input type="text"  name="numberofCocktails">
+<input placeholder = "Cocktail ID" type="text"  name="cocktailName">
+<input placeholder = "Quantity" type="text"  name="numberofCocktails">
 <input type="submit" value="add" />
 </form>
 

@@ -1,37 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
- pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
- <div align="center">
-  <h1>Login</h1>
-  <form action="<%=request.getContextPath()%>/login" method="post">
-   <table style="with: 100%">
-    <tr>
-     <td>Username</td>
-     <td><input type="text" name="username" /></td>
-
-    </tr>
-    <tr>
-     <td>Password</td>
-     <td><input type="password" name="password" /></td>
-    </tr>
-   </table>
-   <input type="submit" value="Submit" />
-   <div> 
-   <span style="color: red">${errorMessage}</span>
-</div>
-</form>
-
-	<p><a href="userRegister.jsp">Click Here to Sign Up</a></p>
-
-	</div>
-</body>
-</html> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     
@@ -44,7 +11,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 </head>
-<body>
+<body style="background:#F0B27A no-repeat;"> 
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
