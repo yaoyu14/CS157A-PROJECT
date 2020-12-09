@@ -2,9 +2,8 @@ package homePage.controller;
 
 public class MyValues {
 
-	private int containsId = 75;
-	//private int quantity = 2;
 
+	private int containsId = 84;
 	
 	public int getContainsId() {
 		return containsId;
@@ -13,13 +12,6 @@ public class MyValues {
 		this.containsId = containsId;
 		System.out.println("IAM INSIDE MYVALUE");
 	}
-//	public int getQuantity() {
-//		return quantity;
-//	}
-//	public void setQuantity(int quantity) {
-//		this.quantity = quantity;
-//	}
 
-	
 	
 }
