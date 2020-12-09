@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<body style="background:#F0B27A no-repeat;">
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -41,15 +43,6 @@ public void printt(){
 			out.println(rs.getString(1) + " " + rs.getString(2) + " $" + rs.getString(4) + "<br/><br/>" );
 		}
 		
-
-		
-	/*	rs = stmt.executeQuery("SELECT * FROM cocktails_deliveries.seller");
-		while (rs.next()) {
-			String name = rs.getString(2);
-			//out.println("<html> <input type=\"submit\" name=\"button1\" value=\"=add\" /> </html>");
-			out.println(rs.getString(2) + "<br/><br/>" );
-		}*/
-		
 		rs.close();
 		
 		stmt.close();
@@ -61,16 +54,28 @@ public void printt(){
 <form action="${pageContext.request.contextPath}/addedcocktails" method="post">
 <label for="fname">Pick a Cocktail:</label>
 
-<!--<input type="text" id="fname" name="cocktailName">-->
 <input type="text"  name="cocktailName">
 <input type="text"  name="numberofCocktails">
-<input type="submit" value="add" />
+<input type="submit" value="Add" />
 </form>
 
 
 <form action="${pageContext.request.contextPath}/buy" method="post">
 <input type="submit" value="Buy" />
 </form>
+
+<form action="${pageContext.request.contextPath}/favorite" method="post">
+<label for="fname">Add your favorite Cocktails:</label>
+
+<input type="text"  name="favoriteCocktailName">
+<input type="submit" value="My Favoriteee" />
+
+</form>
+
+<form action="${pageContext.request.contextPath}/buy" method="post">
+<input type="submit" value="Show My Favorites" />
+</form>
+
 
 
 
