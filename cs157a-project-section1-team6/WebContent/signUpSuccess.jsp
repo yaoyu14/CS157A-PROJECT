@@ -41,11 +41,7 @@ public void printt(){
 			out.println(rs.getString(1) + " " + rs.getString(2) + " $" + rs.getString(4) + "<br/><br/>" );
 		}
 		
-		ResultSet rs2 = stmt.executeQuery(" SELECT * FROM users WHERE username = " +  UserNameVal.userName );
-		
-		while (rs2.next()) {
-			out.println(" USER ID: " + rs2.getString(1) + "<br/><br/>" );
-		}
+
 		
 	/*	rs = stmt.executeQuery("SELECT * FROM cocktails_deliveries.seller");
 		while (rs.next()) {
@@ -55,7 +51,7 @@ public void printt(){
 		}*/
 		
 		rs.close();
-		rs2.close();
+		
 		stmt.close();
 		con.close();
 	} catch (SQLException e) {
