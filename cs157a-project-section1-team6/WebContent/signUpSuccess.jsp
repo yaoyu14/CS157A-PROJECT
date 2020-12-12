@@ -11,8 +11,19 @@
 </head>
 
 <body style="background:#F0B27A no-repeat;"> 
+	
+	<a href = "myFavorite.jsp">Show My Favorite</a>
+	<a href = "search.jsp">Search</a>
+		<a href = "profile.jsp">Profile</a>
 	<a href="logout.jsp">Logout</a>
 	<h1>Welcome to Cocktails Shop!</h1>
+	<br>
+			<form action="${pageContext.request.contextPath}/favorite" method="post">
+<label for="fname">Add your favorite Cocktails:</label>
+
+<input type="text"  name="favoriteCocktailName">
+<input type="submit" value="My Favoriteee" />
+</form>
 	<table class="table table-bordered table-striped" style="width: 70%">
 		<tr>
 			<th style="width: 15%">Cocktail id</th>
@@ -66,5 +77,6 @@
 		<form action="${pageContext.request.contextPath}/buy" method="post">
 		<input type="submit" value="Checkout" />
 		</form>
+
 	</body>
 </html>

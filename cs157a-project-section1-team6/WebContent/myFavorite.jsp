@@ -20,7 +20,7 @@
 	String db = "Cocktails_Deliveries";
 	String user;
 	user = "root";
-	String password = "rootAc045065";
+	String password = "1017081623";
 
 	try {
 
@@ -35,7 +35,7 @@
 		
 		while (rt.next()) {
 
-			out.println("# " + rt.getString(1) +  rt.getString(2) +" Price $" + rt.getString(4) + "<br/><br/>" );
+			out.println(rt.getString(1) + ". " +  rt.getString(2) + ", " + "Alcohol Content: "+ rt.getString(3) + "%" +", Price: $" + rt.getString(4) + "<br/><br/>" );
 		}
 	
 		rt.close();

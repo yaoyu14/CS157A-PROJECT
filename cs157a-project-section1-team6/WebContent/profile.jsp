@@ -6,9 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Profile</title>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
-<body>
+<body style="background:#F0B27A no-repeat;"> 
+<a href="signUpSuccess.jsp">Home</a>
+<h1>Profile</h1>	
 
+<br>
+<h5>you can change your profile info here</h5>
 	<%
 	String user_id = request.getParameter("user_id");
 

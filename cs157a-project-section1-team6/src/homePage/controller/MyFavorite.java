@@ -46,7 +46,7 @@ public class MyFavorite extends HttpServlet {
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("This is the userNAme: "+ UserNameVal.userName  );
         try (Connection connection = DriverManager
-        	.getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "rootAc045065");
+        	.getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "1017081623");
 
             // Step 2:Create a statement using connection object
         
@@ -96,7 +96,7 @@ public class MyFavorite extends HttpServlet {
 			e.printStackTrace();
 		}
   
-		RequestDispatcher dispatcher = request.getRequestDispatcher("myFavorite.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("signUpSuccess.jsp");
 		dispatcher.forward(request, response);
 	}
 
