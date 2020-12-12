@@ -18,7 +18,7 @@ public class LoginUser {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-        	.getConnection("jdbc:mysql://localhost:3306/cocktails_deliveries?serverTimezone=EST5EDT", "root", "rootAc045065");
+        	.getConnection("jdbc:mysql://localhost:3306/cocktails_deliveries?serverTimezone=EST5EDT", "root", "1017081623");
 
             // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection
@@ -43,7 +43,7 @@ public class LoginUser {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-        	.getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "rootAc045065");
+        	.getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "1017081623");
 
             // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection

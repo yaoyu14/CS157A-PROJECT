@@ -62,7 +62,7 @@ public class AddedCocktails extends HttpServlet {
     	Class.forName("com.mysql.cj.jdbc.Driver");
 
         try (Connection connection = DriverManager
-            .getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "rootAc045065");
+            .getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "1017081623");
         		//useSSL=TRUE?
             // Step 2:Create a statement using connection object.
             PreparedStatement preparedStatement = connection.prepareStatement(SQL_STATMENT)) {
@@ -101,7 +101,7 @@ public class AddedCocktails extends HttpServlet {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         try (Connection connection = DriverManager
-            .getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "rootAc045065");
+            .getConnection("jdbc:mysql://localhost:3306/Cocktails_Deliveries?serverTimezone=EST5EDT", "root", "1017081623");
         		//useSSL=TRUE?
             // Step 2:Create a statement using connection object.
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
@@ -146,17 +146,6 @@ public class AddedCocktails extends HttpServlet {
             }
         }
     }
-    
-    //testing
-
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//		
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("signUpSuccess.jsp");
-//		dispatcher.forward(request, response);
-//	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
