@@ -72,7 +72,7 @@
 <script 	src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         </head>
 
-        <body>
+<body style="background:#F0B27A no-repeat;"> 
             <div class="form-horizontal">
                         <c:if test="${cocktail != null}">
                             <form action="update" method="post">
